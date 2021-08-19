@@ -1,3 +1,15 @@
-<center> # Towards robot skill learning by exploiting imitation learning </center>
+# Towards robot skill learning by exploiting imitation learning
+>  This project for my final master project
 
-This project for my final master project
+
+- Introduction
+- Installation and Usage
+- Contenet of Project
+  - Datasets
+  - Disign of Experiments
+  - Implementatation
+  - Evalution
+  - Conclusions
+- Acknowledgements
+
+
