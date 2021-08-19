@@ -2,14 +2,14 @@
 >  This project for my final master project
 
 
-- Introduction
-- Installation and Usage
-- Contenet of Project
+- **Introduction**
+- **Installation and Usage**
+- **Contenet of Project**
   - Datasets
   - Disign of Experiments
   - Implementatation
   - Evalution
   - Conclusions
-- Acknowledgements
+- **Acknowledgements**
 
 
