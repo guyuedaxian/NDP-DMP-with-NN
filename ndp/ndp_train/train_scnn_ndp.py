@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# @Time        : 2021/6/16 3:47
+# @Time        : 2021/6/16 3:47 下午
 # @Author      : linksdl
 # @ProjectName : acs-project-msc_project_ndp
-# @File        : ndp_train.py
+# @File        : train_ndp.py
 
 
 import matplotlib
-
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
@@ -18,37 +17,39 @@ from datetime import datetime
 import os
 import argparse
 import json
-from ndp.ndp_nets.cnn_ndp_main import NdpCNN
+from ndp.ndp_nets.scnn_ndp_main import NdpSCNN
 from imednet.data.smnist_loader import MatLoader, Mapping
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--name', type=str, default='cnn-ndp-il')
+parser.add_argument('--name', type=str, default='scnn-ndp-il')
 args = parser.parse_args()
 
+
 # training on different synthetic dataset
-dataset_name = 'smnist' # smnist, smnist-awgn, smnist-mb, smnist-rc-awgn
+dataset_name = 'smnist-mb' # smnist, smnist-awgn, smnist-mb, smnist-rc-awgn
 neuros = 500   # 200 or 500
 if dataset_name == 'smnist':
     data_path = '../../imednet/data/s-mnist/40x40-smnist.mat'
     data_stub = 'smnist'
-    pre_trained = '../mnist_cnn/cnn_trained/mnist_cnn_net_' + str(neuros) +'(mnist).pt'
+    pre_trained = '../mnist_cnn/cnn_trained/mnist_cnn_net_simple_' + str(neuros) +'(mnist).pt'
 
 elif dataset_name == 'smnist-awgn':
     data_path = '../../imednet/data/s-mnist/40x40-smnist-with-awgn.mat'
     data_stub = 'smnist_awgn_9_5_snr'
-    pre_trained = '../mnist_cnn/cnn_trained/mnist_cnn_net_' + str(neuros) + '(mnist-awgn).pt'
+    pre_trained = '../mnist_cnn/cnn_trained/mnist_cnn_net_simple_' + str(neuros) + '(mnist-awgn).pt'
 
 elif dataset_name == 'smnist-mb':
     data_path = '../../imednet/data/s-mnist/40x40-smnist-with-motion-blur.mat'
     data_stub = 'smnist_mb'
-    pre_trained = '../mnist_cnn/cnn_trained/mnist_cnn_net_' + str(neuros) + '(mnist-motion-blur).pt'
+    pre_trained = '../mnist_cnn/cnn_trained/mnist_cnn_net_simple_' + str(neuros) + '(mnist-motion-blur).pt'
 
 elif dataset_name == 'smnist-rc-awgn':
     data_path = '../../imednet/data/s-mnist/40x40-smnist-with-reduced-contrast-and-awgn.mat'
     data_stub = 'smnist_rc_awgn'
-    pre_trained = '../mnist_cnn/cnn_trained/mnist_cnn_net_' + str(neuros) + '(mnist-reduced-contrast-and-awgn).pt'
+    pre_trained = '../mnist_cnn/cnn_trained/mnist_cnn_net_simple_' + str(neuros) + '(mnist-reduced-contrast-and-awgn).pt'
 
-images1, outputs, scale, or_tr = MatLoader.load_data(data_path, load_original_trajectories=True)
+images1, outputs, scale, or_tr = MatLoader.load_data(data_path,load_original_trajectories=True)
+
 images = np.array([cv2.resize(img, (28, 28)) for img in images1]) / 255.0
 input_size = images.shape[1] * images.shape[2]
 
@@ -56,7 +57,7 @@ inds = np.arange(12000)
 np.random.shuffle(inds)
 test_inds = inds[10000:]
 train_inds = inds[:10000]
-X = torch.Tensor(images[:12000]).float()  # [12000, 28, 28]
+X = torch.Tensor(images[:12000]).float() # [12000, 28, 28]
 Y = torch.Tensor(np.array(or_tr)[:, :, :2]).float()[:12000]
 
 time = str(datetime.now())
@@ -88,8 +89,8 @@ Y_train = Y[train_inds]
 X_test = X[test_inds]
 Y_test = Y[test_inds]
 
-# the ndp_cnn model
-ndpn = NdpCNN(T=T, l=1, N=N, pt=pre_trained, state_index=np.arange(2))
+# the ndpcnn model
+ndpn = NdpSCNN(T=T, l=1, N=N, pt=pre_trained, state_index=np.arange(2))
 optimizer = torch.optim.Adam(ndpn.parameters(), lr=learning_rate)
 
 loss_values = []
@@ -99,8 +100,8 @@ for epoch in range(num_epochs):
     np.random.shuffle(inds)
     for ind in np.split(inds, len(inds) // batch_size):
         optimizer.zero_grad()
-        # output y
-        y_h = ndpn(X_train[ind], Y_train[ind, 0, :])  # [100, 301, 2]
+        # ndpn output y
+        y_h = ndpn(X_train[ind], Y_train[ind, 0, :]) # [100, 301, 2]
         loss = torch.mean((y_h - Y_train[ind]) ** 2)
         loss.backward()
         optimizer.step()
@@ -110,24 +111,22 @@ for epoch in range(num_epochs):
     y_h = ndpn(X[test_sample_indices], Y[test_sample_indices, 0, :])
     y_r = Y[test_sample_indices]
     for i in range(0, len(test_sample_indices)):
-        plt.figure(figsize=(8, 8))
-        plt.tight_layout()
+        plt.figure()
         image = images1[test_sample_indices[i]]
         H, W = image.shape
         plt.imshow(image, cmap='gray', extent=[0, H + 1, W + 1, 0])
         plt.plot(y_h[i, :, 0].detach().cpu().numpy(), y_h[i, :, 1].detach().cpu().numpy(), c='r', linewidth=3)
         plt.plot(y_r[i, :, 0].detach().cpu().numpy(), y_r[i, :, 1].detach().cpu().numpy(), c='b', linewidth=3)
-        plt.axis('off')
+        plt.axis('on')
         plt.savefig(image_save_path + '/valid_img_' + str(epoch) + '_' + str(i) + '.png')
 
     for i in range(0, len(test_sample_indices)):
-        plt.figure(figsize=(8, 8))
-        plt.tight_layout()
+        plt.figure()
         image = images1[test_sample_indices[i]]
         H, W = image.shape
         plt.imshow(image, cmap='gray', extent=[0, H + 1, W + 1, 0])
         plt.plot(y_h[i, :, 0].detach().cpu().numpy(), y_h[i, :, 1].detach().cpu().numpy(), c='r', linewidth=3)
-        plt.axis('off')
+        plt.axis('on')
         plt.savefig(image_save_path + '/valid_img_r_' + str(epoch) + '_' + str(i) + '.png')
 
     # if epoch % 2 == 0:
@@ -160,10 +159,10 @@ for epoch in range(num_epochs):
         plt.savefig(image_save_path + '/ground_test_img_' + str(epoch) + '_' + str(j) + '.png', bbox_inches='tight', pad_inches=0)
 
     test = ((y_htest - y_test) ** 2).mean(1).mean(1)
-    # loss = torch.mean((y_h - Y_train[ind]) ** 2)  # loss value
+    # loss = torch.mean((y_h - Y_train[ind]) ** 2) loss value
     print('Epoch: ' + str(epoch) + ', Test Error: ' + str(test.mean().item()))
     loss_values.append(str(test.mean().item()))
-    torch.save(ndpn.state_dict(), model_save_path + '/cnn-model.pt')
+    torch.save(ndpn.state_dict(), model_save_path + '/scnn-model.pt')
 
 # write value to file
 with open(model_save_path + '/test_loss.txt', 'w') as f:
