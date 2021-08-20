@@ -1,4 +1,4 @@
-# Towards robot skill learning by exploiting imitation learning
+# <center> Towards Robot Skill Learning by Exploiting Imitation Learning </center>
 >  This project for my final master project
 
 
