@@ -83,13 +83,23 @@ In this project, we use five types of datasets to train, test and evaluate our m
 #### E
 
 #### Experiment on Robot Arm
-![](robot/digits/digit-0/digit-0.gif)![](robot/digits/digit-1/digit-1.gif)
-<center class="half">
-    <img src="robot/digits/digit-0/digit-0.gif" width="200"/>
-    <img src="robot/digits/digit-0/digit-0.gif" width="200"/>
-    <img src="robot/digits/digit-0/digit-0.gif" width="200"/> 
-    <img src="robot/digits/digit-0/digit-0.gif" width="200"/>
-</center>
+<p float="left">
+<img src="robot/digits/digit-0/digit-0.gif" width="33%">
+<img src="robot/digits/digit-1/digit-1.gif" width="33%">
+<img src="robot/digits/digit-2/digit-2.gif" width="33%">
+</p>
+
+<p float="left">
+<img src="robot/digits/digit-3/digit-3.gif" width="33%">
+<img src="robot/digits/digit-4/digit-4.gif" width="33%">
+<img src="robot/digits/digit-5/digit-5.gif" width="33%">
+</p>
+
+<p float="left">
+<img src="robot/digits/digit-6/digit-6.gif" width="33%">
+<img src="robot/digits/digit-7/digit-7.gif" width="33%">
+<img src="robot/digits/digit-8/digit-8.gif" width="33%">
+</p>
 
 
 ### 2.4 Evaluation Results
