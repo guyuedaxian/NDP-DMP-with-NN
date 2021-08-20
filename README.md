@@ -18,7 +18,7 @@
 
 ## 3, Contents of Project <a name="project"></a>
 
-### Datasets
+### 3.1 Datasets
 In this project, we use five types of datasets to train, test and evaluate our models. they are show as following:
 - MNIST dataset: http://yann.lecun.com/exdb/mnist/
 - Noisy MNIST (n-MNIST) dataset: https://csc.lsu.edu/~saikat/n-mnist/
@@ -26,18 +26,17 @@ In this project, we use five types of datasets to train, test and evaluate our m
 - Multi-digit MNIST (m-MNIST) dataset: https://github.com/shaohua0116/MultiDigitMNIST
 - EMNIST (e-MNIST) dataset: https://www.nist.gov/itl/products-and-services/emnist-dataset
 
-### Designs of Experiment 
+### 3.2 Designs of Experiment 
 
-### Implementations of Experiment
+### 3.3 Implementations of Experiment
 
 
 #### Experimental on Robot Arm
-![digit0](matlab_robot/digit-0/digit-0.gif)
 
 
-### Evaluation Results
+### 3.4 Evaluation Results
 
-### Conclusions
+### 3.5 Conclusions
 
 
 ## 4, Acknowledgements <a name="3"></a>
