@@ -80,14 +80,14 @@ In this project, we use five types of datasets to train, test and evaluate our m
 
 ### 2.3 Implementations of Experiment
 
+#### E
 
-#### Experimental on Robot Arm
-
+#### Experiment on Robot Arm
+![](robot/digits/digit-0/digit-0.gif)![](robot/digits/digit-1/digit-1.gif)
 
 ### 2.4 Evaluation Results
 
 ### 2.5 Conclusions
-
 
 ## 3, Acknowledgements <a name="3"></a>
 In this project, we use some open souce code. The source code of NDPs approach (Neural Dynamic Policies for End-to-End Sensorimotor Learning) is from: https://github.com/shikharbahl/neural-dynamic-policies/. We also use source code of the Deep Encoder-Decoder Networks approach, which comes from: https://github.com/abr-ijs/imednet. Also, some third-party source code comes from: https://github.com/abr-ijs/digit_generator.
