@@ -26,10 +26,13 @@ In this project, we use five types of datasets to train, test and evaluate our m
 - Multi-digit MNIST (m-MNIST) dataset: https://github.com/shaohua0116/MultiDigitMNIST
 - EMNIST (e-MNIST) dataset: https://www.nist.gov/itl/products-and-services/emnist-dataset
 ### 3.2 Designs of Experiment
-<center class="half">
-    <img src="architectures/DNN-DMP.png" width="400"/><img src="architectures/CNN-DMP.png" width="400"/>
-</center>
 
+**The network architecture of the DNN-DMP model**
+![](architectures/DNN-DMP.png)
+
+
+**The network architecture of the CNN-DMP model**
+![](architectures/CNN-DMP.png)
 
 ### 3.3 Implementations of Experiment
 
