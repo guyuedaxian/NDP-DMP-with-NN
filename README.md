@@ -25,11 +25,9 @@ In this project, we use five types of datasets to train, test and evaluate our m
 - Synthetic MNIST (s-MNIST) dataset: https://portal.ijs.si/nextcloud/s/mnp2DD7qCYzyPd5
 - Multi-digit MNIST (m-MNIST) dataset: https://github.com/shaohua0116/MultiDigitMNIST
 - EMNIST (e-MNIST) dataset: https://www.nist.gov/itl/products-and-services/emnist-dataset
-
-#### MNIST dataset
-![MNIST dataset](documents/figures/MNIST%20dataset.png){:height="100px" width="100px"}
-
-### 3.2 Designs of Experiment 
+### 3.2 Designs of Experiment
+![dnn-dmp](architectures/DNN-DMP.png)
+![dnn-dmp](architectures/CNN-DMP.png) 
 
 ### 3.3 Implementations of Experiment
 
