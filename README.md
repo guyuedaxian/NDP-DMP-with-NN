@@ -27,7 +27,7 @@ In this project, we use five types of datasets to train, test and evaluate our m
 - EMNIST (e-MNIST) dataset: https://www.nist.gov/itl/products-and-services/emnist-dataset
 
 #### MNIST dataset
-![MNIST dataset](documents/figures/MNIST%20dataset.png)
+![MNIST dataset](documents/figures/MNIST%20dataset.png){:height="100px" width="100px"}
 
 ### 3.2 Designs of Experiment 
 
