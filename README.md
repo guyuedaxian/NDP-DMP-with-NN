@@ -16,6 +16,7 @@
 
 
 
+
 ## Introduction <a name="introduction"></a>
 
 ## Installation and Usage <a name="1"></a>
@@ -39,3 +40,4 @@
 
 
 ## Acknowledgements <a name="3"></a>
+In this project, we use some open souce code. The source code of NDPs approach (Neural Dynamic Policies for End-to-End Sensorimotor Learning) is from: https://github.com/shikharbahl/neural-dynamic-policies/. We also use source code of the Deep Encoder-Decoder Networks approach, which comes from: https://github.com/abr-ijs/imednet. Also, some third-party source code comes from: https://github.com/abr-ijs/digit_generator.
