@@ -83,23 +83,36 @@ In this project, we use five types of datasets to train, test and evaluate our m
 #### E
 
 #### Experiment on Robot Arm
-<p float="left">
-<img src="robot/digits/digit-0/digit-0.gif" width="33%">
-<img src="robot/digits/digit-1/digit-1.gif" width="33%">
-<img src="robot/digits/digit-2/digit-2.gif" width="33%">
+> experiment for digit 0 and 1
+<p float="center">
+<img src="robot/digits/digit-0/digit-0.gif" width="49%">
+<img src="robot/digits/digit-1/digit-1.gif" width="49%">
 </p>
 
-<p float="left">
-<img src="robot/digits/digit-3/digit-3.gif" width="33%">
-<img src="robot/digits/digit-4/digit-4.gif" width="33%">
-<img src="robot/digits/digit-5/digit-5.gif" width="33%">
+> experiment for digit 2 and 3
+<p float="center">
+<img src="robot/digits/digit-2/digit-2.gif" width="49%">
+<img src="robot/digits/digit-3/digit-3.gif" width="49%">
 </p>
 
-<p float="left">
-<img src="robot/digits/digit-6/digit-6.gif" width="33%">
-<img src="robot/digits/digit-7/digit-7.gif" width="33%">
-<img src="robot/digits/digit-8/digit-8.gif" width="33%">
+> experiment for digit 4 and 5
+<p float="center">
+<img src="robot/digits/digit-4/digit-4.gif" width="49%">
+<img src="robot/digits/digit-5/digit-5.gif" width="49%">
 </p>
+
+> experiment for digit 6 and 7
+<p float="center">
+<img src="robot/digits/digit-6/digit-6.gif" width="49%">
+<img src="robot/digits/digit-7/digit-7.gif" width="49%">
+</p>
+
+> experiment for digit 8 and 9
+<p float="center">
+<img src="robot/digits/digit-8/digit-8.gif" width="49%">
+<img src="robot/digits/digit-9/digit-9.gif" width="49%">
+</p>
+
 
 
 ### 2.4 Evaluation Results
