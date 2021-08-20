@@ -15,6 +15,11 @@
 ## 1, Introduction <a name="introduction"></a>
 
 ## 2, Installation <a name="installation"></a>
+This code is based on [PyTorch](https://pytorch.org/). To install and setup this code in local machine, running the following commands.
+- **Step 1: Clone the repository and cd into it** 
+  `git clone https://github.com/linksdl/acs-project-msc_project_codes.git
+   cd acs-project-msc_project_codes
+  `
 
 ## 3, Contents of Project <a name="project"></a>
 
