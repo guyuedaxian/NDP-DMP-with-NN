@@ -134,8 +134,6 @@ dmypy.json
 .ipynb_checkpoints
 
 /ndp/ndp_models/*
-/notebooks/images/*
-/ndp/data/*
 /imednet/data/
 /notebooks/data/MNIST/
 /ndp/mnist_cnn/notebooks/data/
