@@ -84,6 +84,13 @@ In this project, we use five types of datasets to train, test and evaluate our m
 
 #### Experiment on Robot Arm
 ![](robot/digits/digit-0/digit-0.gif)![](robot/digits/digit-1/digit-1.gif)
+<center class="half">
+    <img src="robot/digits/digit-0/digit-0.gif" width="200"/>
+    <img src="robot/digits/digit-0/digit-0.gif" width="200"/>
+    <img src="robot/digits/digit-0/digit-0.gif" width="200"/> 
+    <img src="robot/digits/digit-0/digit-0.gif" width="200"/>
+</center>
+
 
 ### 2.4 Evaluation Results
 
