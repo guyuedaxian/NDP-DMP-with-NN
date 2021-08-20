@@ -128,15 +128,17 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+
+
 *.local
 *.bais
 *.weights
 .ipynb_checkpoints
 
-/ndp/ndp_models/*
 /imednet/data/
 /notebooks/data/MNIST/
 /ndp/mnist_cnn/notebooks/data/
 /imednet/models/cnn_encoder_decoder/
 /imednet/models/encoder_decoder/
 /ndp/ndp_models/
+
