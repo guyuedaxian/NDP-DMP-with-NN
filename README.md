@@ -2,7 +2,7 @@
 >  This repository is for my MSc Project.
 
 ## Table of Contents
-- **[1, Installation](#installation)**
+- **[1, Installation and Usage](#installation)**
 - **[2, Contents of Project](#project)**
   - Datasets
   - Designs of Experiment
@@ -11,7 +11,7 @@
   - Conclusions
 - **[3, Acknowledgements](#3)**
 
-## 1, Installation And Usage <a name="installation"></a>
+## 1, Installation and Usage <a name="installation"></a>
 This code is based on [PyTorch](https://pytorch.org/). To install and setup this code in local machine, running the following commands.
 - **1: Clone the repository and cd into it** 
   ``` 
