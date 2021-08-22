@@ -9,7 +9,7 @@
   - Implementations of Experiment
   - Evaluation Results
   - Conclusions
-- **[3, Acknowledgements](#3)**
+- **[3, Acknowledgements](#acknowledgenment)**
 
 ## 1, Installation and Usage <a name="installation"></a>
 This code is based on [PyTorch](https://pytorch.org/). To install and setup this code in local machine, running the following commands.
@@ -119,5 +119,5 @@ In this project, we use five types of datasets to train, test and evaluate our m
 
 ### 2.5 Conclusions
 
-## 3, Acknowledgements <a name="3"></a>
+## 3, Acknowledgements <a name="acknowledgenment"></a>
 In this project, we use some open souce code. The source code of NDPs approach (Neural Dynamic Policies for End-to-End Sensorimotor Learning) is from: https://github.com/shikharbahl/neural-dynamic-policies/. We also use source code of the Deep Encoder-Decoder Networks approach, which comes from: https://github.com/abr-ijs/imednet. Also, some third-party source code comes from: https://github.com/abr-ijs/digit_generator.
