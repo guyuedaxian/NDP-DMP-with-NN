@@ -1,6 +1,9 @@
 # Towards Robot Skill Learning by Exploiting Imitation Learning
 >  This repository is for my MSc Project.
 
+The aim of this project is to investigate and reproduce an existing approach called Neural Dynamic Policies(NDPs) proposed by Bahl et al.(2020). Besides, we also use another approach called Deep Encoder-Decoder Networks proposed by Pahič et al.(2018) to compare with NDPs. We build five machine learning modela based on these approaches and then train, test, and evaluate on avriety of datasets.
+
+
 ## Table of Contents
 - **[1, Installation and Usage](#installation)**
 - **[2, Contents of Project](#project)**
@@ -80,8 +83,6 @@ In this project, we use five types of datasets to train, test and evaluate our m
 
 ### 2.3 Implementations of Experiment
 
-#### E
-
 #### Experiment on Robot Arm
 > experiment for digit 0 and 1
 <p float="center">
@@ -114,10 +115,17 @@ In this project, we use five types of datasets to train, test and evaluate our m
 </p>
 
 
-
 ### 2.4 Evaluation Results
 
 ### 2.5 Conclusions
 
 ## 3, Acknowledgements <a name="acknowledgenment"></a>
 In this project, we use some open souce code. The source code of NDPs approach (Neural Dynamic Policies for End-to-End Sensorimotor Learning) is from: https://github.com/shikharbahl/neural-dynamic-policies/. We also use source code of the Deep Encoder-Decoder Networks approach, which comes from: https://github.com/abr-ijs/imednet. Also, some third-party source code comes from: https://github.com/abr-ijs/digit_generator.
+
+
+## References
+
+Bahl, S., Mukadam, M., Gupta, A. and Pathak, D. 2020. Neural Dynamic Policies for End-to-End Sensorimotor Learning. arXiv:2012.02788.
+
+Pahič, R., Gams, A., Ude, A. and Morimoto, J. 2018. Deep Encoder-Decoder Networks for Mapping Raw Images to Dynamic Movement Primitives In: 2018 IEEE International Conference on Robotics and Automation (ICRA)., pp.5863–5868.
+
