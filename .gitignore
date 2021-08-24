@@ -135,8 +135,9 @@ dmypy.json
 *.weights
 .ipynb_checkpoints
 *ground*.png
+*test_img*.png
+*train_img*.png
+*valid_img*.png
 
-/notebooks/data/MNIST/
-/ndp/mnist_cnn/notebooks/data/
-/ndp/ndp_models/
+
 /imednet/data/trajectories/
