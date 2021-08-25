@@ -142,7 +142,6 @@ dmypy.json
 
 /imednet/data/trajectories/
 /imednet/data/m-mnist/
-/imednet/data/m-mnist/double_mnist_seed_123_image_size_64_64/
 /imednet/data/n-mnist/
 /imednet/data/mnist/
 /imednet/data/s-mnist/
