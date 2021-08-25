@@ -125,7 +125,7 @@ How to train and test models on local machine, running the following files to tr
 ## Project Report <a name="project"></a>
 
 ### Datasets <a name="datasets"></a>
-In this project, we use five types of datasets to train, test and evaluate our models. they are show as following:
+In this project, we use five types of datasets to train, test and evaluate our models. they are as following:
 - MNIST dataset: http://yann.lecun.com/exdb/mnist/
 - Noisy MNIST (n-MNIST) dataset: https://csc.lsu.edu/~saikat/n-mnist/
 - Synthetic MNIST (s-MNIST) dataset: https://portal.ijs.si/nextcloud/s/mnp2DD7qCYzyPd5
