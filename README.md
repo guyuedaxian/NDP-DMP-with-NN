@@ -1,9 +1,12 @@
 ## Towards Robot Skill Learning by Exploiting Imitation Learning
-> This repository is for my MSc Project with the degree of MSc Advanced Computer Science(Artificial Intelligence).
+> This repository is for my MSc Project with the degree of MSc Advanced Computer Science(AI).
 ----
-
-The aim of this project is to investigate and reproduce an existing approach called Neural Dynamic Policies(NDPs) proposed by Bahl et al.(2020). Besides, we also use another approach called Deep Encoder-Decoder Networks proposed by Pahič et al.(2018) to compare with NDPs. We build five machine learning modela based on these approaches and then train, test, and evaluate on avriety of datasets.
-
+The aim of this project is to investigate and reproduce an imitation learning approach called 
+Neural Dynamic Policies(NDPs) proposed by Bahl et al.(2020), which can be found at https://shikharbahl.github.io/neural-dynamic-policies/. 
+Meanwhile, we also employ another approach similar to DNPs called Deep Encoder-Decoder Networks proposed by Pahič et al.(2018). Subsequently, 
+we improve and build several neural network models and variants based on these two approaches, including DNN-DMP, CNN-DMP, DNN-NDP, SCNN-ND, 
+and CNN-NDP. Then, we train, test, evaluate these models on a variety of datasets. Also, we build our project code based on 
+some open-source code on GitHub.
 
 ## Table of Contents
 - **[1, Installation and Usage](#installation)**
@@ -121,7 +124,7 @@ In this project, we use five types of datasets to train, test and evaluate our m
 ### 2.5 Conclusions
 
 ## 3, Acknowledgements <a name="acknowledgenment"></a>
-In this project, we use some open souce code. The source code of NDPs approach (Neural Dynamic Policies for End-to-End Sensorimotor Learning) is from: https://github.com/shikharbahl/neural-dynamic-policies/. We also use source code of the Deep Encoder-Decoder Networks approach, which comes from: https://github.com/abr-ijs/imednet. Also, some third-party source code comes from: https://github.com/abr-ijs/digit_generator.
+In this project, we use some open source code. The source code of NDPs approach (Neural Dynamic Policies for End-to-End Sensorimotor Learning) is from: https://github.com/shikharbahl/neural-dynamic-policies/. We also use source code of the Deep Encoder-Decoder Networks approach, which comes from: https://github.com/abr-ijs/imednet. Also, some third-party source code comes from: https://github.com/abr-ijs/digit_generator.
 
 
 ## References
