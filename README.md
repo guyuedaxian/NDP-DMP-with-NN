@@ -1,4 +1,4 @@
-# Towards Robot Skill Learning by Exploiting Imitation Learning
+## Towards Robot Skill Learning by Exploiting Imitation Learning
 > This repository is for my MSc Project with the degree of MSc Advanced Computer Science(AI).
 ----
 The aim of this project is to investigate and reproduce an imitation learning approach called 
@@ -24,8 +24,8 @@ and CNN-NDP. Then, we train, test, evaluate these models on a variety of dataset
 **history of logging**
 |Date|Author|Description|Version|Changes|
 |----|----|----|----|-----|
-|23/08/2021|[linksdl](https://github.com/linksdl)|Instructions for project|1.0.0|initial instructions|
-|25/08/2021|[linksdl](https://github.com/linksdl)|Instructions for project|1.1.0|add more deatils about the designs and evaluations|
+|23/08/2021|[linksdl](https://github.com/linksdl)|Instructions|1.0.0|initial instructions|
+|25/08/2021|[linksdl](https://github.com/linksdl)|Instructions|1.1.0|add more deatils about the designs and evaluations|
 
 ## Architectures <a name="architectures"></a>
 
