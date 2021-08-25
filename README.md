@@ -28,9 +28,10 @@ We build our project code based on some open-source code on GitHub.
 - **[Structure of Project](#structure)**
 - **[Training Models](#training)**
 - **[Project Report](#project)**
-  - Datasets
-  - Designs
-  - Evaluations
+  - [Datasets](#datasets)
+  - [Designs](#designs)
+  - [Implementations](#implementations)
+  - [Evaluations](#evaluations)
      - Evaluations on Datasets
      - Experiments on Robotic Arm
 - **[Acknowledgements](#acknowledgenment)**
@@ -90,23 +91,33 @@ How to train and test models on local machine, running the following files to tr
 
 ## Project Report <a name="project"></a>
 
-### Datasets
+### Datasets <a name="datasets"></a>
 In this project, we use five types of datasets to train, test and evaluate our models. they are show as following:
 - MNIST dataset: http://yann.lecun.com/exdb/mnist/
 - Noisy MNIST (n-MNIST) dataset: https://csc.lsu.edu/~saikat/n-mnist/
 - Synthetic MNIST (s-MNIST) dataset: https://portal.ijs.si/nextcloud/s/mnp2DD7qCYzyPd5
 - Multi-digit MNIST (m-MNIST) dataset: https://github.com/shaohua0116/MultiDigitMNIST
 - EMNIST (e-MNIST) dataset: https://www.nist.gov/itl/products-and-services/emnist-dataset
-### Designs
+### Designs <a name="designs"></a>
 The designs of DNN-DMP, CNN-DMP, DNN-NDP, SCNN-NDP, and CNN-NDP models shown in `architectures` floder.
 
-### Evaluations
+### Implementations <a name="implementations"></a>
+The implemnetations of our experiments have desrcibed in report in detaild.
 
-#### Evaluations on Datasets
+### Evaluations  <a name="evaluations"></a>
+In this section, we only show some examples of experiments evaluation on s-MNIST datasets. 
 
+#### Evaluations on s-MNIST datasets
+We choose the digits(0-9) as the examples from the s-MNIST datasets, and then eveluate the models on these datasets. More exampels of evaluation results in `documents/results/`
+> **The examples for digit 0 and 1**
+<p float="center", align="center">
+<img src="documents/results/digit-0-1.png" width="49%">
+<img src="documents/results/digit-1-1.png" width="49%">
+</p>
 
 
 #### Experiments on Robotic Arm
+We show some examples of experiments on a robotic arm. In our experiments, we use a robotic arm reproduce trajectories of digits. More examples are shown in  `robot/digits`.
 > experiment for digit 0 and 1
 <p float="center">
 <img src="robot/digits/digit-0/digit-0.gif" width="49%">
@@ -138,12 +149,8 @@ The designs of DNN-DMP, CNN-DMP, DNN-NDP, SCNN-NDP, and CNN-NDP models shown in 
 </p>
 
 
-### Evaluations
-
-### Conclusions
-
 ## Acknowledgements <a name="acknowledgenment"></a>
-In this project, we use some open source code. The source code of NDPs approach (Neural Dynamic Policies for End-to-End Sensorimotor Learning) is from: https://github.com/shikharbahl/neural-dynamic-policies/. We also use source code of the Deep Encoder-Decoder Networks approach, which comes from: https://github.com/abr-ijs/imednet. Also, some third-party source code comes from: https://github.com/abr-ijs/digit_generator.
+In this project, we use some open-source code. The source code of NDPs approach (Neural Dynamic Policies for End-to-End Sensorimotor Learning) is from: https://github.com/shikharbahl/neural-dynamic-policies/. We also use source code of the Deep Encoder-Decoder Networks approach, which comes from: https://github.com/abr-ijs/imednet. Also, some third-party source code comes from: https://github.com/abr-ijs/digit_generator.
 
 
 ## References
