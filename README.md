@@ -7,7 +7,6 @@ Meanwhile, we also employ another approach similar to DNPs called Deep Encoder-D
 we improve and build several neural network models and variants based on these two approaches, namely DNN-DMP, CNN-DMP, DNN-NDP, SCNN-NDP, 
 and CNN-NDP. Then, we train, test, evaluate these models on a variety of datasets. Finally, we carry on some experiments on a robotic arm to apply NDPs.
 
-<--toc->
 ## Table of Contents
 - **[Architectures](#architectures)**
 - **[Installation](#installation)**
@@ -140,12 +139,20 @@ In this section, we only show some examples of experiments evaluation on s-MNIST
 
 #### Evaluations on s-MNIST datasets <a name="evadatasets"></a>
 We choose the digits(0-9) as the examples from the s-MNIST datasets, and then evaluate the models on these datasets. More examples of evaluation results in `documents/results/`
+
+**The loss values of models on s-MNIST datasets**
+<p float="center", align="center">
+<img src="documents/results_experiments/Loss values of models on s-MNIST.png" width="24.5%">
+<img src="documents/results_experiments/Loss values of models on s-MNIST-AWGN.png" width="24.5%">
+<img src="documents/results_experiments/Loss values of models on s-MNIST-MB.png" width="24.5%">
+<img src="documents/results_experiments/Loss values of models on s-MNIST-RC-AWGN.png" width="24.5%">
+</p>
+
 > **The examples for digit 0 and 1**
 <p float="center", align="center">
 <img src="documents/results_experiments/digit-0-1.png" width="49%">
 <img src="documents/results_experiments/digit-1-1.png" width="49%">
 </p>
-
 
 #### Experiments on Robotic Arm <a name="robotic"></a>
 We show some examples of experiments on a robotic arm. In our experiments, we use a robotic arm reproduce trajectories of digits. More examples are shown in  `robot/digits`.
