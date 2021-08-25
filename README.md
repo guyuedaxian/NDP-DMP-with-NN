@@ -30,9 +30,9 @@ We build our project code based on some open-source code on GitHub.
 - **[Project Report](#project)**
   - Datasets
   - Designs
-  - Implementations
   - Evaluations
-  - Conclusions
+     - Evaluations on Datasets
+     - Experiments on Robotic Arm
 - **[Acknowledgements](#acknowledgenment)**
 
 ## Installation <a name="installation"></a>
@@ -98,28 +98,13 @@ In this project, we use five types of datasets to train, test and evaluate our m
 - Multi-digit MNIST (m-MNIST) dataset: https://github.com/shaohua0116/MultiDigitMNIST
 - EMNIST (e-MNIST) dataset: https://www.nist.gov/itl/products-and-services/emnist-dataset
 ### Designs
-**The architecture of Deep Encoder-Decoder Neural Networks**
-<p float="center">
-<img src="architectures/Deep%20encoder-decoder%20architecture.png" width="49%">
-</p>
+The designs of DNN-DMP, CNN-DMP, DNN-NDP, SCNN-NDP, and CNN-NDP models shown in `architectures` floder.
+
+### Evaluations
+
+#### Evaluations on Datasets
 
 
-**The network architecture of the DNN-DMP model**
-![](architectures/DNN-DMP.png)
-
-**The network architecture of the CNN-DMP model**
-![](architectures/CNN-DMP.png)
-
-**The network architecture of the DNN-NDP model**
-![](architectures/DNN-NDP.png)
-
-**The network architecture of the SCNN-NDP model**
-![](architectures/SCNN-NDP.png)
-
-**The network architecture of the CNN-NDP model**
-![](architectures/CNN-NDP.png)
-
-### Implementations
 
 #### Experiments on Robotic Arm
 > experiment for digit 0 and 1
