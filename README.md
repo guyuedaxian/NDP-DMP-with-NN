@@ -1,4 +1,4 @@
-# <center>Towards Robot Skill Learning by Exploiting Imitation Learning</center>
+# Towards Robot Skill Learning by Exploiting Imitation Learning
 > This repository is for my MSc Project with the degree of MSc Advanced Computer Science(AI).
 ----
 The aim of this project is to investigate and reproduce an imitation learning approach called 
@@ -66,13 +66,33 @@ To install and setup this code on local machine, running the following commands.
 ## Structure of Project <a name="structure"></a>
 In this section, we describes the structure of this repository.
 - acs-project-msc_project_codes  # folder
-    - architectures     # network architecture of models
-    - dmp               # implements of Dynamic Movement Primitives (DMPs) 
-    - documents         # including some files
-    - imednet           # implements of Deep Encoder-Decoder Neural Networks
-    - ndp               # implements of NDPs
-    - notebooks         # the evaluation results of models on different datasets
-    - robot             # experiments on robotic arm 
+    - /architectures     # network architecture of models
+    - /dmp               # implements of Dynamic Movement Primitives (DMPs)
+      - /utils    
+    - /documents         # including some files
+      - /figures
+      - /results   
+    - /imednet           # implements of Deep Encoder-Decoder Neural Networks
+      - /data            # datasets used in this project 
+        - /m-mnist
+        - /mnist
+        - /n-mnist
+        - /s-mnist
+      - /imdednet        # networks 
+      - /models          # trained models
+      - /scripts         # the python files to start tarining models
+    - /ndp               # implements of NDPs
+      - /data
+      - /mnist_cnn       # MNIST classifiers
+      - /ndp_models      # trained models
+      - /ndp_nets        # NDPs' models
+      - /ndp_train       # the python files to start tarining models 
+    - /notebooks         # the evaluation results of models on different datasets
+      - /figures
+      - /images          # the examples of experiments
+    - /robot             # experiments on robotic arm 
+      - myrobot.mlx      # MATLAB script to build a robotic arm model
+      - trajectory_mnist_test.mat  # the test data   
 
 ## Training Models <a name="training"></a>
 How to train and test models on local machine, running the following files to train models.
