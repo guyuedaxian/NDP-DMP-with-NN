@@ -4,10 +4,10 @@
 The aim of this project is to investigate and reproduce an imitation learning approach called 
 Neural Dynamic Policies(NDPs) proposed by Bahl et al.(2020), which can be found at https://shikharbahl.github.io/neural-dynamic-policies/. 
 Meanwhile, we also employ another approach similar to DNPs called Deep Encoder-Decoder Networks proposed by Pahič et al.(2018). Subsequently, 
-we improve and build several neural network models and variants based on these two approaches, including DNN-DMP, CNN-DMP, DNN-NDP, SCNN-ND, 
-and CNN-NDP. Then, we train, test, evaluate these models on a variety of datasets. Finally, we carry on experiments on a robotic arm to apply NDPs.
+we improve and build several neural network models and variants based on these two approaches, namely DNN-DMP, CNN-DMP, DNN-NDP, SCNN-NDP, 
+and CNN-NDP. Then, we train, test, evaluate these models on a variety of datasets. Finally, we carry on some experiments on a robotic arm to apply NDPs.
 
-
+<--toc->
 ## Table of Contents
 - **[Architectures](#architectures)**
 - **[Installation](#installation)**
@@ -30,7 +30,7 @@ and CNN-NDP. Then, we train, test, evaluate these models on a variety of dataset
 
 ## Architectures <a name="architectures"></a>
 
-**The network architecure of NDPs**
+**The network architecture of NDPs**
 > Given an image of the digit as the input of the deep neural network, the output of deep neural work is the initial DMP 
 parameters as the input of a Neural Dynamic Policy (NDP), and NDP will generate parameters w (weights of radial-basis functions) and g (goal for the robot). The parameters of the DMP are then predicted as outputs of the preceding layers in the architecture conditioned on the input. Finally, the 
 deep neural network output the motion trajectories using these trained DMPs parameters as the last layer of the deep neural network.
@@ -38,7 +38,7 @@ deep neural network output the motion trajectories using these trained DMPs para
 <img src="architectures/NDPs architecture.png" width="60%">
 </p>
 
-**The network architecure of Deep Encoder-Decoder Neural Networks**
+**The network architecture of Deep Encoder-Decoder Neural Networks**
 > This architecture describes the process of training DMPs parameters and generating writing 
 trajectories of digits. In the first step, each input image is fed to the deep encoder-decoder network that transforms the input image into DMPs parameters, which are compared to raw DMPs parameters associated with the input image. Then, the loss function and its gradients are computed to optimize the parameters of the deep encoder-decoder networks bythe backpropagation algorithm. A deep encoder-decoder model will be trained after the first step. Finally, the DMPs parameters k predicted by the trained model are used to generate the desired writing trajectories associated with this input image by integrating with the DMP approach.
 <p float="center", align="center">
@@ -48,8 +48,8 @@ We build our project code based on some open-source code on GitHub.
 
 
 ## Installation <a name="installation"></a>
-This code is based on [PyTorch](https://pytorch.org/) libraries. 
-Also, we use [Anaconda](https://www.anaconda.com/) to manage our project development environments.If you want to install this project on local machine, please installing `conda` libs before.
+This code is based on [PyTorch](https://pytorch.org/). 
+Also, we use [Anaconda](https://www.anaconda.com/) to manage our project development environments. If you want to install this project on local machine, please installing `conda` libs before.
 To install and setup this code on local machine, running the following commands.
 - **clone the repository and config Python environments** 
   ``` 
@@ -71,33 +71,34 @@ To install and setup this code on local machine, running the following commands.
 ## Structure of Project <a name="structure"></a>
 In this section, we describes the structure of this repository.
 - acs-project-msc_project_codes  # folder
-    - /architectures     # network architecture of models
-    - /dmp               # implements of Dynamic Movement Primitives (DMPs)
+    - /architectures     &nbsp;&nbsp;&nbsp;# network architecture of models
+    - /dmp               &nbsp;&nbsp;&nbsp;# implements of Dynamic Movement Primitives (DMPs)
       - /utils    
-    - /documents         # including some files
-      - /figures
-      - /results   
-    - /imednet           # implements of Deep Encoder-Decoder Neural Networks
-      - /data            # datasets used in this project 
+    - /documents         &nbsp;&nbsp;&nbsp;# including some files
+      - /examples_datasets
+      - /results_experiments
+      - designs.rp       &nbsp;&nbsp;&nbsp;#the original prototypes of design using [Axure](https://www.axure.com/)    
+    - /imednet           &nbsp;&nbsp;&nbsp;# implements of Deep Encoder-Decoder Neural Networks
+      - /data            &nbsp;&nbsp;&nbsp;# datasets used in this project 
         - /m-mnist
         - /mnist
         - /n-mnist
         - /s-mnist
-      - /imdednet        # networks 
-      - /models          # trained models
-      - /scripts         # the python files to start tarining models
-    - /ndp               # implements of NDPs
+      - /imdednet        &nbsp;&nbsp;&nbsp;# networks 
+      - /models          &nbsp;&nbsp;&nbsp;# trained models
+      - /scripts         &nbsp;&nbsp;&nbsp;# the python files to start tarining models
+    - /ndp               &nbsp;&nbsp;&nbsp;# implements of NDPs
       - /data
-      - /mnist_cnn       # MNIST classifiers
-      - /ndp_models      # trained models
-      - /ndp_nets        # NDPs' models
-      - /ndp_train       # the python files to start tarining models 
-    - /notebooks         # the evaluation results of models on different datasets
+      - /mnist_cnn       &nbsp;&nbsp;&nbsp;# MNIST classifiers
+      - /ndp_models      &nbsp;&nbsp;&nbsp;# trained models
+      - /ndp_nets        &nbsp;&nbsp;&nbsp;# NDPs' models
+      - /ndp_train       &nbsp;&nbsp;&nbsp;# the python files to start tarining models 
+    - /notebooks         &nbsp;&nbsp;&nbsp;# the evaluation results of models on different datasets
       - /figures
-      - /images          # the examples of experiments
-    - /robot             # experiments on robotic arm 
-      - myrobot.mlx      # MATLAB script to build a robotic arm model
-      - trajectory_mnist_test.mat  # the test data   
+      - /images          &nbsp;&nbsp;&nbsp;# the examples of experiments
+    - /robot             &nbsp;&nbsp;&nbsp;# experiments on robotic arm 
+      - myrobot.mlx      &nbsp;&nbsp;&nbsp;# MATLAB script to build a robotic arm model
+      - trajectory_mnist_test.mat  &nbsp;&nbsp;&nbsp;# the test data   
 
 ## Training Models <a name="training"></a>
 How to train and test models on local machine, running the following files to train models.
@@ -119,9 +120,6 @@ How to train and test models on local machine, running the following files to tr
   train_cnn_ndp.py
   ```
 
-
-
-
 ## Project Report <a name="project"></a>
 
 ### Datasets <a name="datasets"></a>
@@ -132,20 +130,20 @@ In this project, we use five types of datasets to train, test and evaluate our m
 - Multi-digit MNIST (m-MNIST) dataset: https://github.com/shaohua0116/MultiDigitMNIST
 - EMNIST (e-MNIST) dataset: https://www.nist.gov/itl/products-and-services/emnist-dataset
 ### Designs <a name="designs"></a>
-The designs of DNN-DMP, CNN-DMP, DNN-NDP, SCNN-NDP, and CNN-NDP models shown in `architectures` floder.
+The designs of DNN-DMP, CNN-DMP, DNN-NDP, SCNN-NDP, and CNN-NDP models shown in `architectures` folder.
 
 ### Implementations <a name="implementations"></a>
-The implemnetations of our experiments have desrcibed in report in detaild.
+The implementations of our experiments have described in report in detailed.
 
 ### Evaluations  <a name="evaluations"></a>
 In this section, we only show some examples of experiments evaluation on s-MNIST datasets. 
 
 #### Evaluations on s-MNIST datasets <a name="evadatasets"></a>
-We choose the digits(0-9) as the examples from the s-MNIST datasets, and then eveluate the models on these datasets. More exampels of evaluation results in `documents/results/`
+We choose the digits(0-9) as the examples from the s-MNIST datasets, and then evaluate the models on these datasets. More examples of evaluation results in `documents/results/`
 > **The examples for digit 0 and 1**
 <p float="center", align="center">
-<img src="documents/results/digit-0-1.png" width="49%">
-<img src="documents/results/digit-1-1.png" width="49%">
+<img src="documents/results_experiments/digit-0-1.png" width="49%">
+<img src="documents/results_experiments/digit-1-1.png" width="49%">
 </p>
 
 

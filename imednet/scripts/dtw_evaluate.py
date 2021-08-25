@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Evaluate image-t
-o-motion network results with dynamic time warping.
+o-motion network results_experiments with dynamic time warping.
 """
 from __future__ import print_function
 
@@ -24,7 +24,7 @@ from imednet.trainers.encoder_decoder_trainer import Trainer
 from imednet.models.encoder_decoder import load_model
 
 # Parse arguments
-description = 'Evaluate image-to-motion network results with dynamic time warping.'
+description = 'Evaluate image-to-motion network results_experiments with dynamic time warping.'
 parser = argparse.ArgumentParser(description=description)
 parser.add_argument('--model-path', type=str, default=None,
                     help='model path (directory)')
@@ -149,7 +149,7 @@ dtw_errors_save_path = os.path.join(args.model_path, 'dtw_errors_' + dataset_nam
 dtw_results_save_path = os.path.join(args.model_path, 'dtw_results_' + dataset_name + '.txt')
 dtw_results_file = open(dtw_results_save_path, 'w')
 
-print('Generating results...')
+print('Generating results_experiments...')
 dtw_error_mean = np.mean(dtw_error)
 dtw_error_std = np.std(dtw_error)
 dtw_error_min = np.min(dtw_error)
@@ -162,7 +162,7 @@ print('DTW error STD: {}'.format(dtw_error_std))
 print('DTW error min: {}'.format(dtw_error_min))
 print('DTW error max: {}'.format(dtw_error_max))
 
-print('Saving DTW results to: {}'.format(dtw_results_save_path))
+print('Saving DTW results_experiments to: {}'.format(dtw_results_save_path))
 dtw_results_file.write('Model path: {}\n'.format(args.model_path))
 dtw_results_file.write('Data path: {}\n'.format(args.data_path))
 dtw_results_file.write('DTW error mean: {}\n'.format(dtw_error_mean))
