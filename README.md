@@ -141,11 +141,16 @@ In this section, we only show some examples of experiments evaluation on s-MNIST
 We choose the digits(0-9) as the examples from the s-MNIST datasets, and then evaluate the models on these datasets. More examples of evaluation results in `documents/results/`
 
 **The loss values of models on s-MNIST datasets**
+> The top-left is evaluation on s-MNIST dataset. The top-rihgt is evaluation on s-MNIST-AWGN dataset. 
+> The bottom-left is evaluation on s-MNIST-MB dataset. The bottom-right is evaluation on s-MNIST-RCAWGN dataset.
 <p float="center", align="center">
-<img src="documents/results_experiments/Loss values of models on s-MNIST.png" width="24.5%">
-<img src="documents/results_experiments/Loss values of models on s-MNIST-AWGN.png" width="24.5%">
-<img src="documents/results_experiments/Loss values of models on s-MNIST-MB.png" width="24.5%">
-<img src="documents/results_experiments/Loss values of models on s-MNIST-RC-AWGN.png" width="24.5%">
+  <img src="documents/results_experiments/Loss values of models on s-MNIST.png" width="49%">
+  <img src="documents/results_experiments/Loss values of models on s-MNIST-AWGN.png" width="49%">
+</p>
+
+<p float="center", align="center">
+  <img src="documents/results_experiments/Loss values of models on s-MNIST-MB.png" width="49%">
+  <img src="documents/results_experiments/Loss values of models on s-MNIST-RC-AWGN.png" width="49%">
 </p>
 
 > **The examples for digit 0 and 1**
