@@ -5,24 +5,29 @@ The aim of this project is to investigate and reproduce an imitation learning ap
 Neural Dynamic Policies(NDPs) proposed by Bahl et al.(2020), which can be found at https://shikharbahl.github.io/neural-dynamic-policies/. 
 Meanwhile, we also employ another approach similar to DNPs called Deep Encoder-Decoder Networks proposed by Pahič et al.(2018). Subsequently, 
 we improve and build several neural network models and variants based on these two approaches, including DNN-DMP, CNN-DMP, DNN-NDP, SCNN-ND, 
-and CNN-NDP. Then, we train, test, evaluate these models on a variety of datasets. Also, we build our project code based on 
-some open-source code on GitHub.
+and CNN-NDP. Then, we train, test, evaluate these models on a variety of datasets. Finally, we carry on experiments on a robotic arm to apply NDPs.
+
+We build our project code based on some open-source code on GitHub.
 
 ## Table of Contents
-- **[1, Installation and Usage](#installation)**
-- **[2, Contents of Project](#project)**
+- **[Installation](#installation)**
+- **[Structure of Project](#structure)**
+- **[Training Models](#training)**
+- **[Project Report](#project)**
   - Datasets
-  - Designs of Experiment
-  - Implementations of Experiment
-  - Evaluation Results
+  - Designs
+  - Implementations
+  - Evaluations
   - Conclusions
-- **[3, Acknowledgements](#acknowledgenment)**
+- **[Acknowledgements](#acknowledgenment)**
 
-## 1, Installation and Usage <a name="installation"></a>
-This code is based on [PyTorch](https://pytorch.org/). To install and setup this code in local machine, running the following commands.
-- **1: Clone the repository and cd into it** 
+## Installation <a name="installation"></a>
+This code is based on [PyTorch](https://pytorch.org/) libraries. 
+Also, we use [Anaconda](https://www.anaconda.com/) to manage our project development environments.If you want to install this project on local machine, please installing `conda` libs before.
+To install and setup this code on local machine, running the following commands.
+- **clone the repository and config Python environments** 
   ``` 
-  # clone this reposotry to local dir
+  # clone this reposotry to a local directory
   git clone https://github.com/linksdl/acs-project-msc_project_codes.git
   
   # cd in this directory
@@ -38,16 +43,26 @@ This code is based on [PyTorch](https://pytorch.org/). To install and setup this
   conda env create -f environments.yaml
   ```
   
-- **2: Train the models on Datasets**
+## Structure of Project <a name="structure"></a>
+In this section, we describes the structure of this repository.
+- acs-project-msc_project_codes  # folder
+    - architectures     # network architecture of models
+    - dmp               # implements of Dynamic Movement Primitives (DMPs) 
+    - documents         # including some files
+    - imednet           # implements of Deep Encoder-Decoder Neural Networks
+    - ndp               # implements of NDPs
+    - notebooks         # the evaluation results of models on different datasets
+    - robot             # experiments on robotic arm 
+
+## Training Models <a name="training"></a>
+How to train and test models on local machine, running the following files to train models.
+- **train the models on datasets**
   ```
   # train the DNN-DMP model
   train_encoder_decoder.py
   
   # train the CNN-DMP model
   train_cnn_encoder_decoder.py
-  
-  # train the DNN-NDP model
-  dnn_ndp_train.py
   
   # train the DNN-NDP model
   train_dnn_ndp.py
@@ -59,16 +74,19 @@ This code is based on [PyTorch](https://pytorch.org/). To install and setup this
   train_cnn_ndp.py
   ```
 
-## 2, Contents of Project <a name="project"></a>
+## Project Report <a name="project"></a>
 
-### 2.1 Datasets
+### Datasets
 In this project, we use five types of datasets to train, test and evaluate our models. they are show as following:
 - MNIST dataset: http://yann.lecun.com/exdb/mnist/
 - Noisy MNIST (n-MNIST) dataset: https://csc.lsu.edu/~saikat/n-mnist/
 - Synthetic MNIST (s-MNIST) dataset: https://portal.ijs.si/nextcloud/s/mnp2DD7qCYzyPd5
 - Multi-digit MNIST (m-MNIST) dataset: https://github.com/shaohua0116/MultiDigitMNIST
 - EMNIST (e-MNIST) dataset: https://www.nist.gov/itl/products-and-services/emnist-dataset
-### 2.2 Designs of Experiment
+### Designs
+**The architecture of Deep Encoder-Decoder Neural Networks**
+![](architectures/Deep%20encoder-decoder%20architecture.png)
+
 
 **The network architecture of the DNN-DMP model**
 ![](architectures/DNN-DMP.png)
@@ -85,9 +103,9 @@ In this project, we use five types of datasets to train, test and evaluate our m
 **The network architecture of the CNN-NDP model**
 ![](architectures/CNN-NDP.png)
 
-### 2.3 Implementations of Experiment
+### Implementations
 
-#### Experiment on Robot Arm
+#### Experiments on Robotic Arm
 > experiment for digit 0 and 1
 <p float="center">
 <img src="robot/digits/digit-0/digit-0.gif" width="49%">
@@ -119,11 +137,11 @@ In this project, we use five types of datasets to train, test and evaluate our m
 </p>
 
 
-### 2.4 Evaluation Results
+### Evaluations
 
-### 2.5 Conclusions
+### Conclusions
 
-## 3, Acknowledgements <a name="acknowledgenment"></a>
+## Acknowledgements <a name="acknowledgenment"></a>
 In this project, we use some open source code. The source code of NDPs approach (Neural Dynamic Policies for End-to-End Sensorimotor Learning) is from: https://github.com/shikharbahl/neural-dynamic-policies/. We also use source code of the Deep Encoder-Decoder Networks approach, which comes from: https://github.com/abr-ijs/imednet. Also, some third-party source code comes from: https://github.com/abr-ijs/digit_generator.
 
 
