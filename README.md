@@ -18,8 +18,8 @@ and CNN-NDP. Then, we train, test, evaluate these models on a variety of dataset
   - [Designs](#designs)
   - [Implementations](#implementations)
   - [Evaluations](#evaluations)
-     - Evaluations on Datasets
-     - Experiments on Robotic Arm
+     - [Evaluations on Datasets](#evadatasets)
+     - [Experiments on Robotic Arm](#robotic)
 - **[Acknowledgements](#acknowledgenment)**
 
 
@@ -115,7 +115,7 @@ The implemnetations of our experiments have desrcibed in report in detaild.
 ### Evaluations  <a name="evaluations"></a>
 In this section, we only show some examples of experiments evaluation on s-MNIST datasets. 
 
-#### Evaluations on s-MNIST datasets
+#### Evaluations on s-MNIST datasets <a name="evadatasets"></a>
 We choose the digits(0-9) as the examples from the s-MNIST datasets, and then eveluate the models on these datasets. More exampels of evaluation results in `documents/results/`
 > **The examples for digit 0 and 1**
 <p float="center", align="center">
@@ -124,7 +124,7 @@ We choose the digits(0-9) as the examples from the s-MNIST datasets, and then ev
 </p>
 
 
-#### Experiments on Robotic Arm
+#### Experiments on Robotic Arm <a name="robotic"></a>
 We show some examples of experiments on a robotic arm. In our experiments, we use a robotic arm reproduce trajectories of digits. More examples are shown in  `robot/digits`.
 > experiment for digit 0 and 1
 <p float="center">
