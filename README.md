@@ -7,6 +7,24 @@ Meanwhile, we also employ another approach similar to DNPs called Deep Encoder-D
 we improve and build several neural network models and variants based on these two approaches, including DNN-DMP, CNN-DMP, DNN-NDP, SCNN-ND, 
 and CNN-NDP. Then, we train, test, evaluate these models on a variety of datasets. Finally, we carry on experiments on a robotic arm to apply NDPs.
 
+
+## Table of Contents
+- **[Architectures](#architectures)**
+- **[Installation](#installation)**
+- **[Structure of Project](#structure)**
+- **[Training Models](#training)**
+- **[Project Report](#project)**
+  - [Datasets](#datasets)
+  - [Designs](#designs)
+  - [Implementations](#implementations)
+  - [Evaluations](#evaluations)
+     - Evaluations on Datasets
+     - Experiments on Robotic Arm
+- **[Acknowledgements](#acknowledgenment)**
+
+
+## Architectures <a name="architectures"></a>
+
 **The network architecure of NDPs**
 > Given an image of the digit as the input of the deep neural network, the output of deep neural work is the initial DMP 
 parameters as the input of a Neural Dynamic Policy (NDP), and NDP will generate parameters w (weights of radial-basis functions) and g (goal for the robot). The parameters of the DMP are then predicted as outputs of the preceding layers in the architecture conditioned on the input. Finally, the 
@@ -23,18 +41,6 @@ trajectories of digits. In the first step, each input image is fed to the deep e
 </p>
 We build our project code based on some open-source code on GitHub.
 
-## Table of Contents
-- **[Installation](#installation)**
-- **[Structure of Project](#structure)**
-- **[Training Models](#training)**
-- **[Project Report](#project)**
-  - [Datasets](#datasets)
-  - [Designs](#designs)
-  - [Implementations](#implementations)
-  - [Evaluations](#evaluations)
-     - Evaluations on Datasets
-     - Experiments on Robotic Arm
-- **[Acknowledgements](#acknowledgenment)**
 
 ## Installation <a name="installation"></a>
 This code is based on [PyTorch](https://pytorch.org/) libraries. 
@@ -56,8 +62,7 @@ To install and setup this code on local machine, running the following commands.
   pip3 install -r requirements.txt
   # or try
   conda env create -f environments.yaml
-  ```
-  
+  ``` 
 ## Structure of Project <a name="structure"></a>
 In this section, we describes the structure of this repository.
 - acs-project-msc_project_codes  # folder
@@ -88,6 +93,9 @@ How to train and test models on local machine, running the following files to tr
   # train the CNN-NDP model
   train_cnn_ndp.py
   ```
+
+
+
 
 ## Project Report <a name="project"></a>
 
