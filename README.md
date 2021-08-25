@@ -1,5 +1,6 @@
-# Towards Robot Skill Learning by Exploiting Imitation Learning
->  This repository is for my MSc Project.
+## Towards Robot Skill Learning by Exploiting Imitation Learning
+> This repository is for my MSc Project with the degree of MSc Advanced Computer Science(Artificial Intelligence).
+----
 
 The aim of this project is to investigate and reproduce an existing approach called Neural Dynamic Policies(NDPs) proposed by Bahl et al.(2020). Besides, we also use another approach called Deep Encoder-Decoder Networks proposed by Pahič et al.(2018) to compare with NDPs. We build five machine learning modela based on these approaches and then train, test, and evaluate on avriety of datasets.
 
