@@ -1,0 +1,39 @@
+Network created: 2021-07-29 22:01:38.504222
+Model: imednet.models.encoder_decoder.EncoderDecoderNet
+Data path: /Users/shengdaolin_sh/dir_developer/workspaces/pycharm/acs-project-msc_project_ndp/imednet/data/s-mnist/40x40-smnist.mat
+Model save path: /Users/shengdaolin_sh/dir_developer/workspaces/pycharm/acs-project-msc_project_ndp/imednet/models/encoder_decoder/imednet-40x40-smnist 2021-07-29 22:01:38.504222
+Layer sizes: [1600, 1500, 1300, 1000, 600, 200, 20, 35, 54]
+Optimizer: adam
+Learning rate: 0.001
+Momentum: 0.5
+ Setting parameters for learning:
+   - Samples of data: 20000
+   - Epochs: -1
+   - Batch size: 100
+   - training ratio: 0.7
+   - validation ratio: 0.15
+   - test ratio: 0.15
+     -   validation_interval: 1
+     -  test_interval: 1
+     -   log_interval: 1
+     -   cuda = False
+     -  Validation fail: 60
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 0.001
+    lr: 0.001
+    weight_decay: 0
+)
+MSELoss()
+ saving_epochs = 1948
+ Learning finished with this parameters:
+   - Number of epochs: 2009
+   - Last train loss: tensor(0.0001)
+   - Last validation loss: 0.0003530342655722052
+   Last test loss: tensor(0.0003, grad_fn=<MseLossBackward>)
+   - Elapsed time: 38465.007304
+   - last validation count: 61
+     -   Stop criterion: max validation fail reached
+     -  Minimal gradient: tensor(0.)
