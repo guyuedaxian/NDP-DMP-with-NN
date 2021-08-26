@@ -3,9 +3,9 @@
 ----
 The aim of this project is to investigate and reproduce an imitation learning approach called 
 Neural Dynamic Policies(NDPs) proposed by Bahl et al.(2020), which can be found at https://shikharbahl.github.io/neural-dynamic-policies/. 
-Meanwhile, we also employ another approach similar to DNPs called Deep Encoder-Decoder Networks proposed by Pahič et al.(2018). Subsequently, 
+Meanwhile, we also employ another approach similar to NDPs called Deep Encoder-Decoder Networks proposed by Pahič et al.(2018). Subsequently, 
 we improve and build several neural network models and variants based on these two approaches, namely DNN-DMP, CNN-DMP, DNN-NDP, SCNN-NDP, 
-and CNN-NDP. Then, we train, test, evaluate these models on a variety of datasets. Finally, we carry on some experiments on a robotic arm to apply NDPs.
+and CNN-NDP. Then, we train, test, and evaluate these models on a variety of datasets. Finally, we carry on some experiments on a robotic arm to apply NDPs.
 
 ## Table of Contents
 - **[Architectures](#architectures)**
