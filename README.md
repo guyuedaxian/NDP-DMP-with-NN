@@ -43,7 +43,7 @@ trajectories of digits. In the first step, each input image is fed to the deep e
 <p float="center", align="center">
 <img src="architectures/Deep encoder-decoder architecture.png" width="60%">
 </p>
-We build our project code based on some open-source code on GitHub.
+We build our project code based on some open-source codes on GitHub.
 
 
 ## Installation <a name="installation"></a>
