@@ -13,12 +13,6 @@ class DMP(object):
             dt: time step
 
         # Returns
-
-
-        # Examples
-        ```
-
-        ```
         """
         self.a_z = 48
         self.a_x = 2

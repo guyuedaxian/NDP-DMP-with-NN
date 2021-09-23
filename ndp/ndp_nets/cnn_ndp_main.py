@@ -4,7 +4,7 @@
 # @Time        : 2021/6/16 2:20
 # @Author      : linksdl
 # @ProjectName : acs-project-msc_project_ndp
-# @File        : ndp_main.py
+# @File        : cnn_ndp_main.py
 
 
 import numpy as np

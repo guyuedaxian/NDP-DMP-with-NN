@@ -4,7 +4,7 @@ import numpy as np
 
 class DMPIntegrator:
     """
-        Decoder network
+        DMP Integrator
     """
     def __init__(self, rbf='gaussian', only_g=False, az=False):
         a = 1
@@ -15,15 +15,15 @@ class DMPIntegrator:
     def forward(self, inputs, parameters, param_gradients, scaling, y0, dy0, goal=None, w=None, vel=False):
         dim = int(parameters[0].item())  # 2
         k = dim                          # 2
-        N = int(parameters[1].item())    # 30
-        division = k * (N + 2)           # 64
-        inputs_np = inputs               # [100, 64]
+        N = int(parameters[1].item())    # the number of basis functions
+        division = k * (N + 2)           # DMP parameters
+        inputs_np = inputs               # [batch_size, k * (N + 2) ]
         if goal is not None:
             goal = goal
             w = w
         else:
-            w = inputs_np[:, dim:dim * (N + 1)]  # [100, 2 * N]
-            goal = inputs_np[:, :dim]    # [100, 2]
+            w = inputs_np[:, dim:dim * (N + 1)]  # [batch_size, 2 * N]
+            goal = inputs_np[:, :dim]    # [batch_size, 2]
 
         if self.az:
             alpha_z = inputs[:, -1]
@@ -31,14 +31,14 @@ class DMPIntegrator:
             alpha_z = alpha_z.repeat(t, 1).transpose(0, 1).reshape(inputs.shape[0], -1)
             alpha_z = alpha_z.contiguous().view(alpha_z.shape[0] * alpha_z.shape[1], )
 
-        w = w.reshape(-1, N)             # [200, 30]
+        w = w.reshape(-1, N)             # [2*batch_size, N]
 
         if self.only_g:
             w = torch.zeros_like(w)
         if vel:
             dy0 = torch.zeros_like(y0)
 
-        goal = goal.contiguous().view(goal.shape[0] * goal.shape[1], )  # [200]
+        goal = goal.contiguous().view(goal.shape[0] * goal.shape[1], )  # [2*batch_size]
         # integrate the image to DMP outputs
         if self.az:
             X, dX, ddX = integrate(parameters, w, y0, dy0, goal, 1, rbf=self.rbf, az=True, alpha_z=alpha_z)
@@ -118,9 +118,9 @@ def integrate(data, w, y0, dy0, goal, tau, rbf='gaussian', az=False, alpha_z=Non
     dY[:, 0] = dy0
     ddY[:, 0] = z
     N = int(data[1].item()) # 30
-    dt = data[3].item() # 0.0033333334140479565
-    a_x = data[4].item() # 1.0
-    a_z = data[5].item() # 25.0
+    dt = data[3].item()     # 0.0033333334140479565
+    a_x = data[4].item()    # 1.0
+    a_z = data[5].item()    # 25 the number of basis functions
     if az:
         a_z = alpha_z
         a_z = torch.clamp(a_z, 0.5, 30)
@@ -141,17 +141,19 @@ def integrate(data, w, y0, dy0, goal, tau, rbf='gaussian', az=False, alpha_z=Non
             psi = 1 / torch.sqrt(1 + h * eps)
         if rbf == 'linear':
             psi = h * eps
+
         # equation 6
-        # mv() matrix by vector
-        #
-        fx = torch.mv(w, psi) * x * (goal - y0) / torch.sum(psi)
-        # equation 4 19
+        fx = torch.mv(w, psi) * x * (goal - y0) / torch.sum(psi) # mv() matrix by vector
+        # equation 4 and 19
         dz = a_z * (b_z * (goal - y) - z) + fx
         dy = z
         dz = dz / tau
         dy = dy / tau
-        y = y + dy * dt # equation 15-2
-        z = z + dz * dt # equation 15-1
+        # equation 15-2
+        y = y + dy * dt
+
+        # equation 15-1
+        z = z + dz * dt
         Y[:, i + 1] = y
         dY[:, i + 1] = dy
         ddY[:, i + 1] = dz

@@ -4,8 +4,7 @@
 # @Time        : 2021/6/16 3:47 下午
 # @Author      : linksdl
 # @ProjectName : acs-project-msc_project_ndp
-# @File        : train_ndp.py
-
+# @File        : train_scnn_ndp.py
 
 import matplotlib
 matplotlib.use('Agg')

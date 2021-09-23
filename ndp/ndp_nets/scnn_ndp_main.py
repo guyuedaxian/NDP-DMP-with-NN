@@ -1,4 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
+# @Time        : 2021/6/16 2:30
+# @Author      : linksdl
+# @ProjectName : acs-project-msc_project_ndp
+# @File        : scnn_ndp_main.py
 
 import numpy as np
 import torch
