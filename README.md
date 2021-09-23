@@ -1,18 +1,18 @@
-## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Towards Robot Skill Learning by Exploiting Imitation Learning
-> This repository is for my MSc Project with the degree of MSc Advanced Computer Science(AI).
-----
+# Towards Robot Skill Learning by Exploiting Imitation Learning
+> This repository is for my MSc Project. 
+
 The aim of this project is to investigate and reproduce an imitation learning approach called 
 Neural Dynamic Policies(NDPs) proposed by Bahl et al.(2020), which can be found at https://shikharbahl.github.io/neural-dynamic-policies/. 
 Meanwhile, we also employ another approach similar to NDPs called Deep Encoder-Decoder Networks proposed by Pahič et al.(2018). Subsequently, 
-we improve and build several neural network models and variants based on these two approaches, namely DNN-DMP, CNN-DMP, DNN-NDP, SCNN-NDP, 
-and CNN-NDP. Then, we train, test, and evaluate these models on a variety of datasets. Finally, we carry on some experiments on a robotic arm to apply NDPs.
+we improve and build several deep neural network models and its variants based on these two approaches, namely DNN-DMP, CNN-DMP, DNN-NDP, SCNN-NDP, 
+and CNN-NDP. Then, we train, test, and evaluate these models on a variety of datasets. Finally, we carry on some experiments on a robotic arm to apply NDPs. By above process, We can get a investigation results of NDPs.
 
 ## Table of Contents
 - **[Architectures](#architectures)**
-- **[Installation](#installation)**
+- **[Installation and Usage](#installation)**
 - **[Structure of Project](#structure)**
-- **[Training Models](#training)**
-- **[Project Report](#project)**
+- **[Training of Models](#training)**
+- **[Report of Project](#project)**
   - [Datasets](#datasets)
   - [Designs](#designs)
   - [Implementations](#implementations)
@@ -38,23 +38,24 @@ deep neural network output the motion trajectories using these trained DMPs para
 </p>
 
 **The network architecture of Deep Encoder-Decoder Neural Networks**
-> This architecture describes the process of training DMPs parameters and generating writing 
-trajectories of digits. In the first step, each input image is fed to the deep encoder-decoder network that transforms the input image into DMPs parameters, which are compared to raw DMPs parameters associated with the input image. Then, the loss function and its gradients are computed to optimize the parameters of the deep encoder-decoder networks bythe backpropagation algorithm. A deep encoder-decoder model will be trained after the first step. Finally, the DMPs parameters k predicted by the trained model are used to generate the desired writing trajectories associated with this input image by integrating with the DMP approach.
+> This architecture describes the process of training DMPs parameters and generating motion 
+trajectories of the digits. In the first step, each input image is fed to the deep encoder-decoder network that transforms the input image into DMPs parameters, which are compared to raw DMPs parameters associated with the input image. Then, the loss function and its gradients are computed to optimize the parameters of the deep encoder-decoder networks bythe backpropagation algorithm. A deep encoder-decoder model will be trained after the first step. Finally, the DMPs parameters k predicted by the trained model are used to generate the desired writing trajectories associated with this input image by integrating with the DMP approach.
 <p float="center", align="center">
 <img src="architectures/Deep encoder-decoder architecture.png" width="60%">
 </p>
-We build our project code based on some open-source codes on GitHub.
 
 
-## Installation <a name="installation"></a>
-This code is based on [PyTorch](https://pytorch.org/). 
-Also, we use [Anaconda](https://www.anaconda.com/) to manage our project development environments. If you want to install this project on local machine, please installing `conda` libs before.
-To install and setup this code on local machine, running the following commands.
-- **clone the repository and config Python environments** 
-  ``` 
+## Installation and Usage <a name="installation"></a>
+We build our project code based on some open-source code on GitHub. This code is based on [PyTorch](https://pytorch.org/). 
+Also, we use [Anaconda](https://www.anaconda.com/) to manage our project development environments. If you want to install this project on local machine, please installing `conda` libs before. Finally, some integrated development environment (IDE), such as [Visual Studio Code](https://code.visualstudio.com/), [Pycharm](https://www.jetbrains.com/pycharm/), can install on local meachine to run this project. 
+To install and setup this code on a local machine, running the following commands.
+- **Clone the repository to local machine** 
+  ```sh 
   # clone this reposotry to a local directory
   git clone https://github.com/linksdl/acs-project-msc_project_codes.git
-  
+  ```
+- **Config the Python Interprater Environments**
+ ```sh 
   # cd in this directory
   cd acs-project-msc_project_codes
   
@@ -67,6 +68,7 @@ To install and setup this code on local machine, running the following commands.
   # or try
   conda env create -f environments.yaml
   ``` 
+
 ## Structure of Project <a name="structure"></a>
 In this section, we describes the structure of this repository.
 - acs-project-msc_project_codes  # folder
@@ -101,25 +103,25 @@ In this section, we describes the structure of this repository.
 
 ## Training Models <a name="training"></a>
 How to train and test models on local machine, running the following files to train models.
-- **train the models on datasets**
-  ```
+- **Train the models on datasets**
+  ```sh
   # train the DNN-DMP model
-  train_encoder_decoder.py
+  python train_encoder_decoder.py
   
   # train the CNN-DMP model
-  train_cnn_encoder_decoder.py
+  python train_cnn_encoder_decoder.py
   
   # train the DNN-NDP model
-  train_dnn_ndp.py
+  python train_dnn_ndp.py
   
   # train the SCNN-NDP model
-  train_scnn_ndp.py
+  python train_scnn_ndp.py
   
   # train the CNN-NDP model
-  train_cnn_ndp.py
+  python train_cnn_ndp.py
   ```
 
-## Project Report <a name="project"></a>
+## Report of Project <a name="project"></a>
 
 ### Datasets <a name="datasets"></a>
 In this project, we use five types of datasets to train, test and evaluate our models. they are as following:
@@ -137,7 +139,7 @@ The implementations of our experiments have described in report in detailed.
 ### Evaluations  <a name="evaluations"></a>
 In this section, we only show some examples of experiments evaluation on s-MNIST datasets. 
 
-#### Evaluations on s-MNIST datasets <a name="evadatasets"></a>
+#### 1，Evaluations on s-MNIST datasets <a name="evadatasets"></a>
 We choose the digits(0-9) as the examples from the s-MNIST datasets, and then evaluate the models on these datasets. More examples of evaluation results in `documents/results/`
 
 **The loss values of models on s-MNIST datasets**
@@ -153,13 +155,13 @@ We choose the digits(0-9) as the examples from the s-MNIST datasets, and then ev
   <img src="documents/results_experiments/Loss values of models on s-MNIST-RC-AWGN.png" width="49%">
 </p>
 
-> **The examples for digit 0 and 1**
+**The examples for digit 0 and 1**
 <p float="center", align="center">
 <img src="documents/results_experiments/digit-0-1.png" width="49%">
 <img src="documents/results_experiments/digit-1-1.png" width="49%">
 </p>
 
-#### Experiments on Robotic Arm <a name="robotic"></a>
+#### 2，Experiments on Robotic Arm <a name="robotic"></a>
 We show some examples of experiments on a robotic arm. In our experiments, we use a robotic arm reproduce trajectories of digits. More examples are shown in  `robot/digits`.
 > experiment for digit 0 and 1
 <p float="center">
@@ -193,7 +195,7 @@ We show some examples of experiments on a robotic arm. In our experiments, we us
 
 
 ## Acknowledgements <a name="acknowledgenment"></a>
-In this project, we use some open-source code. The source code of NDPs approach (Neural Dynamic Policies for End-to-End Sensorimotor Learning) is from: https://github.com/shikharbahl/neural-dynamic-policies/. We also use source code of the Deep Encoder-Decoder Networks approach, which comes from: https://github.com/abr-ijs/imednet. Also, some third-party source code comes from: https://github.com/abr-ijs/digit_generator.
+In this project, we use some open-source code. The source code of NDPs approach (Neural Dynamic Policies for End-to-End Sensorimotor Learning) is from: https://github.com/shikharbahl/neural-dynamic-policies/. We also use open-source code of the Deep Encoder-Decoder Networks approach, which comes from: https://github.com/abr-ijs/imednet. Also, some third-party open-source code comes from: https://github.com/abr-ijs/digit_generator.
 
 
 ## References
