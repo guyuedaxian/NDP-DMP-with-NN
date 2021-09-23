@@ -179,8 +179,8 @@ We show some examples of experiments on a robotic arm. In our experiments, we us
 <img src="robot/digits/digit-3/digit-3.gif" width="49%">
 </p>
 <p float="center">
-<img src="robot/digits/digit-0/digit-2-all.png" width="49%">
-<img src="robot/digits/digit-1/digit-3-all.png" width="49%">
+<img src="robot/digits/digit-2/digit-2-all.png" width="49%">
+<img src="robot/digits/digit-3/digit-3-all.png" width="49%">
 </p>
 
 > experiment for digit 4 and 5
@@ -189,8 +189,8 @@ We show some examples of experiments on a robotic arm. In our experiments, we us
 <img src="robot/digits/digit-5/digit-5.gif" width="49%">
 </p>
 <p float="center">
-<img src="robot/digits/digit-0/digit-4-all.png" width="49%">
-<img src="robot/digits/digit-1/digit-5-all.png" width="49%">
+<img src="robot/digits/digit-4/digit-4-all.png" width="49%">
+<img src="robot/digits/digit-5/digit-5-all.png" width="49%">
 </p>
 
 > experiment for digit 6 and 7
@@ -199,8 +199,8 @@ We show some examples of experiments on a robotic arm. In our experiments, we us
 <img src="robot/digits/digit-7/digit-7.gif" width="49%">
 </p>
 <p float="center">
-<img src="robot/digits/digit-0/digit-6-all.png" width="49%">
-<img src="robot/digits/digit-1/digit-7-all.png" width="49%">
+<img src="robot/digits/digit-6/digit-6-all.png" width="49%">
+<img src="robot/digits/digit-7/digit-7-all.png" width="49%">
 </p>
 
 > experiment for digit 8 and 9
@@ -209,8 +209,8 @@ We show some examples of experiments on a robotic arm. In our experiments, we us
 <img src="robot/digits/digit-9/digit-9.gif" width="49%">
 </p>
 <p float="center">
-<img src="robot/digits/digit-0/digit-8-all.png" width="49%">
-<img src="robot/digits/digit-1/digit-9-all.png" width="49%">
+<img src="robot/digits/digit-8/digit-8-all.png" width="49%">
+<img src="robot/digits/digit-9/digit-9-all.png" width="49%">
 </p>
 
 
