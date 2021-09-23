@@ -1,4 +1,4 @@
-# Towards Robot Skill Learning by Exploiting Imitation Learning
+## Towards Robot Skill Learning by Exploiting Imitation Learning
 > This repository is for my MSc Project. 
 
 The aim of this project is to investigate and reproduce an imitation learning approach called 
