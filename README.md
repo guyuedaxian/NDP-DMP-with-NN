@@ -34,14 +34,14 @@ and CNN-NDP. Then, we train, test, and evaluate these models on a variety of dat
 parameters as the input of a Neural Dynamic Policy (NDP), and NDP will generate parameters w (weights of radial-basis functions) and g (goal for the robot). The parameters of the DMP are then predicted as outputs of the preceding layers in the architecture conditioned on the input. Finally, the 
 deep neural network output the motion trajectories using these trained DMPs parameters as the last layer of the deep neural network.
 <p float="center", align="center">
-<img src="architectures/NDPs architecture.png" width="60%">
+<img src="architectures/NDPs architecture.png" width="59%">
 </p>
 
 **The network architecture of Deep Encoder-Decoder Neural Networks**
 > This architecture describes the process of training DMPs parameters and generating motion 
 trajectories of the digits. In the first step, each input image is fed to the deep encoder-decoder network that transforms the input image into DMPs parameters, which are compared to raw DMPs parameters associated with the input image. Then, the loss function and its gradients are computed to optimize the parameters of the deep encoder-decoder networks bythe backpropagation algorithm. A deep encoder-decoder model will be trained after the first step. Finally, the DMPs parameters k predicted by the trained model are used to generate the desired writing trajectories associated with this input image by integrating with the DMP approach.
 <p float="center", align="center">
-<img src="architectures/Deep encoder-decoder architecture.png" width="60%">
+<img src="architectures/Deep encoder-decoder architecture.png" width="59%">
 </p>
 
 
